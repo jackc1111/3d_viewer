@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (!localStorage.getItem('redirected')) {
+            window.location.href = 'launch.html';
+        } else {
+            localStorage.removeItem('redirected');
+        }
+    </script>
+</head>
+<body>
+    <div id="backgroundContainer"></div>
+    <main>
+        <div id="container3D"></div>
+    </main>
+    
+    <div id="sidebar" class="draggable collapsed">
+        <button id="controlsButton">Controls (C)</button>
+        <div id="controls">
+            <div class="background-controls">
+                <label for="backgroundTypeSelector">Background Type:</label>
+                <select id="backgroundTypeSelector">
+                    <option value="Color">Color</option>
+                    <option value="Texture">Texture</option>
+                    <option value="Map">Map</option>
+                </select>
+                <button id="addBackgroundButton" class="control-btn">Add Background</button>
+            </div>
+            <div id="backgroundsContainer"></div>
+        </div>
+        <div id="map-container" style="height: 200px;"></div>
+        <div id="resize-handle"></div> <!-- Ручка для зміни розміру -->
+    </div>
+
+    <div id="sidebar-right" class="draggable collapsed">
+        <button id="scenesButton">Scenes</button>
+        <div id="scenes">
+            <input type="file" id="fileInput" accept=".glb,.gltf">
+        </div>
+        <button id="toggleButton" class="control-btn" style="display: none;">Toggle View (V)</button>
+        <button id="rotateButton" class="control-btn" style="display: none;">Toggle Rotation (R)</button>
+        <div class="color-controls">
+            <label for="wireframeColorPicker">Wireframe Color:</label>
+            <input type="color" id="wireframeColorPicker" value="#888888" style="display: none;">
+        </div>
+        <div class="light-controls">
+            <label for="lightTypeSelector">Light Type:</label>
+            <select id="lightTypeSelector">
+                <option value="DirectionalLight">Directional Light</option>
+                <option value="PointLight">Point Light</option>
+                <option value="SpotLight">Spot Light</option>
+            </select>
+            <button id="addLightButton" class="control-btn">Add Light</button>
+        </div>
+        <div id="ui"></div>
+        
+        
+        <div id="resize-handle-right"></div> <!-- Ручка для зміни розміру -->
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+</body>
+</html>

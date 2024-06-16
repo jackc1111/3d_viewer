@@ -1,0 +1,234 @@
+/* styles.css */
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#container3D {
+    width: 100%;
+    height: 100%;
+}
+
+#backgroundContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.background-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+#sidebar,
+#sidebar-right {
+    position: absolute;
+    top: 20px; /* Верхній відступ */
+    width: 300px;
+    height: auto; /* Автоматична висота */
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto; /* Додаємо авто прокрутку */
+    overflow-x: hidden; /* Приховуємо горизонтальну прокрутку */
+    z-index: 20;
+    transition: height 0.3s ease, width 0.3s ease; /* Додаємо плавність переходу для висоти та ширини */
+    border-radius: 10px; /* Заокруглення кутів */
+    resize: none; /* Забороняємо зміну розміру стандартними засобами */
+}
+
+#sidebar {
+    left: 20px; /* Лівий відступ */
+}
+
+#sidebar-right {
+    right: 20px; /* Правий відступ */
+}
+
+#sidebar::-webkit-scrollbar,
+#sidebar-right::-webkit-scrollbar {
+    width: 0; /* Приховуємо смугу прокрутки */
+}
+
+#sidebar.collapsed,
+#sidebar-right.collapsed {
+    height: 80px; /* Висота кнопки Controls/Scenes + margin-bottom */
+    overflow: hidden;
+}
+
+#controlsButton,
+#scenesButton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 22px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    position: sticky; /* Додаємо фіксацію */
+    top: 0; /* Фіксація у верхній частині панелі */
+    z-index: 100; /* Забезпечуємо, що кнопки будуть поверх інших елементів */
+    transition: background-color 0.3s ease;
+}
+
+#controlsButton:hover,
+#scenesButton:hover {
+    background-color: #0056b3;
+}
+
+#controls,
+#scenes {
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.control-btn:hover {
+    background-color: #0056b3;
+}
+
+#colorControls {
+    display: none;
+    margin-bottom: 10px;
+}
+
+input[type="file"],
+select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.background-controls,
+.color-controls,
+.light-controls {
+    margin-bottom: 20px;
+}
+
+.background-controls label,
+.color-controls label,
+.light-controls label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#map-container {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ccc;
+}
+
+/* Widget styles */
+.widget {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.widget-header {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.widget-content {
+    margin-top: 10px;
+}
+
+.widget-content.collapsed {
+    display: none;
+}
+
+.control-wrapper {
+    margin-bottom: 10px;
+}
+
+.control-wrapper label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Additional UI container styles */
+#ui {
+    margin-top: 20px;
+}
+
+/* Draggable styles */
+.draggable {
+    cursor: default; /* Змінюємо курсор на звичайний */
+}
+
+.draggable.dragging {
+    cursor: move; /* Курсор при перетягуванні */
+}
+
+/* Resizable handle */
+#resize-handle,
+#resize-handle-right {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    cursor: ns-resize;
+}
+
+#resize-handle.hidden,
+#resize-handle-right.hidden {
+    display: none;
+}
+
+/* Disable selection during resizing */
+.no-select {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}

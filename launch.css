@@ -1,0 +1,66 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+/* Launch Container */
+.launch-container {
+  text-align: center;
+  background-color: rgb(250, 250, 250);
+  padding: 40px;
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(163, 163, 163);
+  margin-bottom: 20px;
+}
+
+.launch-container h1 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: black;
+}
+
+.launch-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: black;
+  background-color: white;
+  border: 1px solid rgb(163, 163, 163);
+  border-radius: 2rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.launch-button:hover {
+  background-color: rgb(245, 245, 245);
+  border-color: black;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(250, 250, 250);
+  border-top: 1px solid rgb(163, 163, 163);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: black;
+}

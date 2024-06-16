@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Page</title>
+    <link rel="stylesheet" href="launch.css">
+</head>
+<body>
+    <div class="launch-container">
+        <h1>Welcome to the Simple 3D Viewer</h1>
+        <a href="index.html" class="launch-button" onclick="setRedirectFlag()">Launch App</a>
+    </div>
+    <footer class="footer">
+        <p>Deep H&M Synergy &copy; 2024</p>
+    </footer>
+    <script>
+        function setRedirectFlag() {
+            localStorage.setItem('redirected', 'true');
+        }
+    </script>
+</body>
+</html>
